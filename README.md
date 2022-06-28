@@ -11,3 +11,4 @@ reboot
 
 -----------------------------------------------------------------------
 
+![alt text](https://github.com/hugo-pcq/Conky_Config/blob/main/conky_config.png)
