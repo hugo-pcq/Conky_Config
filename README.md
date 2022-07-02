@@ -12,6 +12,6 @@ Add /usr/bin/conky to Startup Application (GUI) and reboot
 
 -----------------------------------------------------------------------
 
-![alt text](https://github.com/hugo-pcq/Conky_Config/blob/main/conky_config.png)
+![alt text](https://github.com/hugo-pcq/Conky_Config/blob/main/conky_config_v2.png)
 
 -----------------------------------------------------------------------
