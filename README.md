@@ -5,7 +5,7 @@ $ Download conkyrc file in your /home folder, and hide it (mv conkyrc .conkyrc)
 
 $ Download conky and dependencies: sudo apt-get install conky conky-all
 
-Add /usr/bin/conky to Startup Application (GUI) and reboot
+Add /usr/bin/conky to "Startup Application" (GUI) and reboot
 
 -----------------------------------------------------------------------
 
