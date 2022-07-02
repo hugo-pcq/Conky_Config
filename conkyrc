@@ -19,9 +19,9 @@ conky.config = {
     background = false,
     border_width = 1,
     cpu_avg_samples = 2,
-    default_color = 'white',
-    default_outline_color = 'white',
-    default_shade_color = 'white',
+    default_color = 'Light Cyan',
+    default_outline_color = 'Light Cyan',
+    default_shade_color = 'Light Cyan',
     double_buffer = true,
     draw_borders = false,
     draw_graph_borders = true,
@@ -29,8 +29,8 @@ conky.config = {
     draw_shades = false,
     extra_newline = false,
     font = 'DejaVu Sans Mono:size=11',
-    gap_x = 20,
-    gap_y = 38,
+    gap_x = 12,
+    gap_y = 37,
     minimum_height = 5,
     minimum_width = 5,
     net_avg_samples = 2,
@@ -44,8 +44,8 @@ conky.config = {
     own_window_type = 'desktop',
     show_graph_range = false,
     show_graph_scale = false,
-    stippled_borders = 0,
-    update_interval = 2.0,
+    stippled_borders = 10,
+    update_interval = 1,
     uppercase = true,
     use_spacer = 'none',
     use_xft = true,
@@ -54,14 +54,15 @@ conky.config = {
 conky.text = [[
 $hr
 
-${color grey}Date / Time: $color${utime}
+${color white}Date / Time: $color${utime}
 
-${color grey}Uptime:$color $uptime | $desktop_name
+${color white}Uptime:$color $uptime | $desktop_name
+
 $hr
 
-${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
+${color white}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
 
-${color grey}Global CPU Usage:$color $cpu% ${cpubar 4} 
+${color white}Global CPU Usage:$color $cpu% ${cpubar 4} 
 
 CPU 1 _  ${cpu cpu1}  ${cpubar cpu1}
 CPU 2 _  ${cpu cpu2}  ${cpubar cpu2}
@@ -72,7 +73,7 @@ CPU 6 _  ${cpu cpu6}  ${cpubar cpu6}
 CPU 7 _  ${cpu cpu7}  ${cpubar cpu7}
 CPU 8 _  ${cpu cpu8}  ${cpubar cpu8}
 
-${color grey}Top Processes          PID     CPU%   MEM%
+${color white}Top Processes          PID     CPU%   MEM%
 ${color} ${top name 1}    ${top pid 1} ${top cpu 1} ${top mem 1}
 ${color} ${top name 2}    ${top pid 2} ${top cpu 2} ${top mem 2}
 ${color} ${top name 3}    ${top pid 3} ${top cpu 3} ${top mem 3}
@@ -81,33 +82,32 @@ ${color} ${top name 5}    ${top pid 5} ${top cpu 5} ${top mem 5}
 ${color} ${top name 6}    ${top pid 6} ${top cpu 6} ${top mem 6}
 $hr
 
-${color grey}File systems:
+${color white}File systems:
  / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
 
 Disk: Read: ${diskio_read} | Write: ${diskio_write}
 ${diskiograph_read 22,195 143712 13B108} ${alignr}${diskiograph_write 22,195 143712 13B108}
 $hr
 
-${color grey}Networking
-${color2}Down: $color${downspeed wlp0s20f3} k/s ${alignr}${color2}Up: $color${upspeed wlp0s20f3} k/s
+${color white}Networking
+${color}Down: $color${downspeed wlp0s20f3} k/s ${alignr}${color}Up: $color${upspeed wlp0s20f3} k/s
 ${downspeedgraph wlp0s20f3 25,140 000000 00ff00} ${alignr}${upspeedgraph wlp0s20f3 25,140 000000 ff0000}$color
-${color2}Total: $color${totaldown wlp0s20f3} ${alignr}${color2}Total: $color${totalup wlp0s20f3}
+${color}Total: $color${totaldown wlp0s20f3} ${alignr}${color}Total: $color${totalup wlp0s20f3}
 
-${color grey}PBL_IP:$color${texeci 3600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1} ${color grey}| PVT_IP: $color${addr wlp0s20f3}
+${color white}PBL_IP:$color${texeci 3600 wget http://checkip.dyndns.org -O - -o /dev/null | cut -d : -f 2 | cut -d \< -f 1} ${color black}| PVT_IP: $color${addr wlp0s20f3}
 $hr
 
-${color grey}Temperature
-${color2}CPU (thinkpad-isa-0000) _ 50    : $alignr$color${exec sensors | grep 'CPU' | awk '{print $2}'}
-${color2}CPU (coretemp-isa-0000) _ 45    : $alignr$color${exec sensors | grep 'Package id' | awk '{print $4}'}
-${color2}WiFi Adapter(wifi_1--0) _ 35    : $alignr$color${exec sensors | grep -A 2 'iwlwifi_1-virtual-0' | awk '{print $2}' | tail -1}
-${color2}Motherboard (nvme--pci) _ 35    : $alignr$color${exec sensors | grep 'Composite' | awk '{print $2}'}
+${color white}Temperature
+${color}CPU (thinkpad-isa-0000) _ 50    : $alignr$color${exec sensors | grep 'CPU' | awk '{print $2}'}
+${color}CPU (coretemp-isa-0000) _ 45    : $alignr$color${exec sensors | grep 'Package id' | awk '{print $4}'}
+${color}WiFi Adapter(wifi_1--0) _ 35    : $alignr$color${exec sensors | grep -A 2 'iwlwifi_1-virtual-0' | awk '{print $2}' | tail -1}
+${color}Motherboard (nvme--pci) _ 35    : $alignr$color${exec sensors | grep 'Composite' | awk '{print $2}'}
 
-${color2}FAN1 (thinkpad-isa-0000) _ 4500 : $alignr$color${exec sensors | grep 'fan1' | awk '{print $2}'} RPM
-${color2}FAN2 (thinkpad-isa-0000) _ 4500 : $alignr$color${exec sensors | grep 'fan2' | awk '{print $2}'} RPM
+${color}FAN1 (thinkpad-isa-0000) _ 4500 : $alignr$color${exec sensors | grep 'fan1' | awk '{print $2}'} RPM
+${color}FAN2 (thinkpad-isa-0000) _ 4500 : $alignr$color${exec sensors | grep 'fan2' | awk '{print $2}'} RPM
 $hr
 
-Battery: ${battery_short BAT0} ${battery_bar BAT0} 
+${color white}Battery: $color${battery_short BAT0} ${battery_bar BAT0} 
 
 $hr
-
 ]]
